@@ -1,0 +1,53 @@
+.blockUI{z-index: 1011; position: fixed; padding: 5px; margin: 0px 0px 0px -50px; width: auto; top: 40%; left: 50%; text-align: center; color: rgb(0, 115, 187); border: medium none; background-color: rgb(255, 255, 255); cursor: wait; border-radius: 5px;}
+.blockOverlay{z-index: 1000;border: medium none;margin: 0px;padding: 0px;width: 100%;height: 100%;top: 0px;left: 0px;background-color: rgb(0, 0, 0);opacity: 0.6;cursor: wait;position: fixed;display: block;}
+.spinnerContainer{border: none;width: auto;left: 50%;background: none;color: rgb(255, 255, 255);padding: 20px;border-radius: 0px;margin-left: -50px;display: block;}
+/*******Spinner*****/
+@keyframes spinner-container-rotate {to {  transform: rotate(360deg);}
+}
+@keyframes spinner-left-spin {from {  transform: rotate(130deg);}
+50% {  transform: rotate(-5deg);}
+to {  transform: rotate(130deg);}
+}
+@keyframes spinner-right-spin {from {  transform: rotate(-130deg);}
+50% {  transform: rotate(5deg);}
+to {  transform: rotate(-130deg);}
+}
+@keyframes spinner-fill-unfill-rotate {12.5% {  transform: rotate(135deg);}
+25% {  transform: rotate(270deg);}
+37.5% {  transform: rotate(405deg);}
+50% {  transform: rotate(540deg);}
+62.5% {  transform: rotate(675deg);}
+75% {  transform: rotate(810deg);}
+87.5% {  transform: rotate(945deg);}
+to {  transform: rotate(1080deg);}
+}
+@keyframes slideDown {from {  transform: translate3d(0, -100%, 0);  visibility: visible;}
+ to {  transform: translate3d(0, 0, 0);}
+}
+.slide-down {animation-name: slideDown;}
+.preloader-wrapper.active {animation: spinner-container-rotate 1568ms linear infinite;}
+.preloader-wrapper {display: inline-block;position: relative;width: 45px;height: 45px;}
+.spinner-layer {position: absolute;width: 100%;height: 100%;opacity: 0;}
+.active .spinner-layer {opacity: 1;animation: spinner-fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;}
+.gap-patch {position: fixed;top: 0;left: 45%;width: 10%;height: 100%;overflow: hidden;border-color: inherit;}
+.gap-patch .circle {width: 1000%;left: -450%;}
+.circle-clipper {display: inline-block;position: relative;width: 50%;height: 100%;overflow: hidden;border-color: inherit;}
+.circle-clipper .circle {width: 200%;height: 100%;border-width: 2px;border-style: solid;border-color: inherit;border-bottom-color: transparent;border-radius: 50%;animation: none;position: absolute;top: 0;right: 0;bottom: 0;}
+.circle-clipper.left .circle {left: 0;border-right-color: transparent;transform: rotate(129deg);}
+.circle-clipper.right .circle {left: -100%;border-left-color: transparent;transform: rotate(-129deg);}
+.active .circle-clipper.left .circle {animation: spinner-left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;}
+.active .circle-clipper.right .circle {animation: spinner-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;}
+
+/*size and color custom clasess*/
+.small{ width:45px; height:45px;}
+.medium{ width:60px; height:60px;}
+.large{ width:100px; height:100px;}
+
+.white{ border-color:#fff;}
+.dark{ border-color:#333}
+.red{ border-color:#db0011}
+
+.blockPage {font-family:"UniversNextforHSBCW29-Rg" !important; box-shadow: none !important; max-width:510px ;height: auto; margin: 0  !important; position: fixed;
+  top: calc( 50% - ( 115px / 2) )!important; /* where ... is the element's height */
+  left: calc( 50% - ( 91px / 2) ); /* where ... is the element's width */
+  /* -webkit-transform: translateX(-50%) translateY(-50%);-khtml-transform: translateX(-50%) translateY(-50%);-moz-transform: translateX(-50%) translateY(-50%);-ms-transform: translateX(-50%) translateY(-50%);-o-transform: translateX(-50%) translateY(-50%);transform: translateX(-50%) translateY(-50%);*/}

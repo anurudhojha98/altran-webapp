@@ -1,0 +1,28 @@
+<!-- <mat-progress-spinner *ngIf="show" 
+class="example-margin transparent"
+[color]="color"
+[mode]="mode"
+[value]="value">
+</mat-progress-spinner> -->
+<div role="alert" aria-live='assertive' aria-label='Do not refresh the page' [class.hidden]="!show">
+    <div *ngIf="show">
+        <div class="blockUI blockOverlay">
+        </div>
+          <div class="blockUI blockMsg blockPage spinnerContainer">
+              <!-- <div class="preloader-wrapper medium white active">
+                  <div class="spinner-layer">
+                      <div class="circle-clipper left">
+                          <div class="circle"></div>
+                      </div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div>
+                      </div>
+                  </div>
+              </div>
+              <div>Loading</div> -->
+            <mat-progress-spinner 
+              [color]="color"
+              [mode]="mode"
+              [value]="value">
+            </mat-progress-spinner>
+          </div>
+    </div>
+  </div>
